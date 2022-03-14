@@ -3,9 +3,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 import time
 
-YOUR_EMAIL = "youremailhere@gmail.com"
-YOUR_PASSWORD = "***********"
-YOUR_PHONE_NUMBER = "085xxxxxxxxx"
+YOUR_EMAIL = "zzahrizhal.ali@gmail.com"
+YOUR_PASSWORD = "Assalamualaikum29"
+YOUR_PHONE_NUMBER = "085xxxxxx"
 
 chrome_web_driver_path = "C:\Development\chromedriver.exe"
 
@@ -52,13 +52,14 @@ for listing in all_listings:
             close_button = driver.find_element_by_class_name("artdeco-modal__dismiss")
             close_button.click()
             time.sleep(2)
-            discard_button = driver.find_elements_by_class_name("artdeco-modal__confirm-dialog-btn")[1]
+            discard_button = driver.find_element_by_xpath('//*[@id="ember411"]')
             discard_button.click()
             print("Complex application, skipped.")
             continue
         else:
-            submit_button.click()
-
+            # submit_button.click()
+            time.sleep(2)
+            driver.quit()
         # Once application completed, close the pop-up window.
         time.sleep(2)
         close_button = driver.find_element_by_class_name("artdeco-modal__dismiss")
